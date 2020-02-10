@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}Bookmark add{% endblock %}
+</head>
+<body>
+    {% block content %}
+    <form action="" method="post"> <!--현재페이지에 자료 전달-->
+        {%csrf_token%}
+        {{form.as_p}} <!--클래스 형 뷰의 옵션 값으로 설정한 필드를 출력하는데 각 필드 폼 태그들을 p태그로 감싸 출력-->
+        <input type="submit" value="Add" class="btn btn-info btn-sm">
+    </form>
+    {% endblock %}
+</body>
+</html>
